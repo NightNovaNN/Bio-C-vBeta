@@ -1,0 +1,107 @@
+# BioC vAlpha4-Lite Demo Program
+# clean version — no dicts, no cursed types
+
+# ---------------------------------------
+# BASIC VALUES
+# ---------------------------------------
+
+var x: int = 10;
+var y: int = 20;
+var msg: string = "Hello BioC   ";
+var truth: bool = 1;
+
+echo(x);
+echo(y);
+echo("basic printing works");
+
+# ---------------------------------------
+# STRING OPERATIONS
+# ---------------------------------------
+
+var clean: string = strip(msg);
+echo(clean);
+
+var lower_msg: string = lower("HeLLo");
+echo(lower_msg);
+
+var upper_msg: string = upper("bioc");
+echo(upper_msg);
+
+var yes: bool = startswith("anish", "an");
+echo(yes);
+
+var no: bool = endswith("hello", "xyz");
+echo(no);
+
+var replaced: string = replace("hello world", "world", "BioC");
+echo(replaced);
+
+# ---------------------------------------
+# SPLIT TEST
+# ---------------------------------------
+
+var s: string = "a,b,c";
+var parts_count: int = 0;
+
+# split returns char**
+var parts: string* = split(s, ',', &parts_count);
+
+echo(parts_count);
+
+inline_c {
+    printf("parts[0] = %s\n", parts[0]);
+    printf("parts[1] = %s\n", parts[1]);
+    printf("parts[2] = %s\n", parts[2]);
+}
+
+# ---------------------------------------
+# ARRAY TEST
+# ---------------------------------------
+
+var arr: array = array_new();
+
+inline_c {
+    array_push(arr, "hello");
+    array_push(arr, "world");
+}
+
+echo(array_len(arr));
+
+inline_c {
+    printf("arr[0] = %s\n", (char*)array_get(arr, 0));
+    printf("arr[1] = %s\n", (char*)array_get(arr, 1));
+}
+
+# ---------------------------------------
+# FUNCTIONS
+# ---------------------------------------
+
+int add(int a, int b) -> int {
+    return a + b;
+}
+
+var z: int = add(5, 7);
+echo(z);
+
+# ---------------------------------------
+# TERNARY
+# ---------------------------------------
+
+var mx: int = (10 > 5) ? 10 : 5;
+echo(mx);
+
+# ---------------------------------------
+# FILE OUTPUT
+# ---------------------------------------
+
+out[result.txt]: "BioC OK\n";
+
+# ---------------------------------------
+# INLINE C
+# ---------------------------------------
+
+inline_c {
+    printf("Inline C works inside BioC!\n");
+}
+
+exit 0;
