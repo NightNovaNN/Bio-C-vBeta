@@ -144,7 +144,7 @@ All generated C code is clean, ANSI-compatible, and portable.
 
 ---
 
-# Example Program (Alpha4-Lite)
+# Example Program (vBeta)
 
 ### BioC Source
 
