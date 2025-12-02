@@ -1,10 +1,11 @@
-# BioC
+# BioC vBeta
 
 BioC is a modern, developer-friendly language that transpiles directly into clean, portable ANSI C.  
 It provides expressive syntax, built-in utilities, and high-level features while preserving the performance, clarity, and compatibility of traditional C.
 
 BioC acts as a “TypeScript for C”:  
 you write readable BioC code, and the compiler emits predictable plain C.
+**Note:** Still in Beta form so may not be perfect.
 
 ---
 
