@@ -79,7 +79,7 @@ int main(int argc, char **argv) {
     fprintf(out, "#include <stdlib.h>\n");
     fprintf(out, "#include <string.h>\n");
     fprintf(out, "#include <stdbool.h>\n");
-    fprintf(out, "#include \"bioc_std.h\"\n\n");
+    fprintf(out, "#include \"bioc_stdlib.h\"\n\n");
 
     fprintf(out, "/* --- BioC transpiled code --- */\n\n");
 
@@ -273,3 +273,4 @@ int main(int argc, char **argv) {
     fclose(out);
     return 0;
 }
+
